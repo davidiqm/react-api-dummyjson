@@ -67,6 +67,7 @@ function EditScreen() {
       <NavBar />
       <div className="mt-7">
         <div className="mx-auto max-w-4xl">
+        <h1 className="mb-5 text-4xl">Editar Producto</h1>
           <form onSubmit={onSubmit}>
             {/* <input type="hidden" defaultValue={product.id} /> */}
             <div className="mb-6">

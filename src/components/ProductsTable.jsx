@@ -13,7 +13,7 @@ function ProductsTable({products}) {
         console.log(response);
         setSuccess(response.status == 200 ? true : false)
         console.log(success)
-        alert('Exitoso')
+        alert('Exitoso eliminación id=' + id)
       })
     
     

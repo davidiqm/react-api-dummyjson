@@ -46,6 +46,7 @@ function CreateScreen() {
       <NavBar />
       <div className="mt-7">
         <div className="mx-auto max-w-4xl">
+          <h1 className="mb-5 text-4xl">Crear Producto</h1>
           <form onSubmit={onSubmit}>
             <div className="mb-6">
               <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-90">Título</label>
