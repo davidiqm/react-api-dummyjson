@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+
+const baseUrl = "https://dummyjson.com/products/"
 
 function ProductsTable({products}) {
+  const [success, setSuccess] = useState(false);
 
-  const onDelete = () => {
+  const onDelete = (id) => {
+    axios.patch(baseUrl+id)
+      .then(response => {
+        console.log(response);
+        setSuccess(response.status == 200 ? true : false)
+        console.log(success)
+        alert('Exitoso')
+      })
+    
     
   };
 
@@ -63,9 +76,9 @@ function ProductsTable({products}) {
                               Editar
                             </button>
                           </Link>
-                            <button type="button" className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-                              Eliminar
-                            </button>
+                          <button onClick={() => onDelete(product.id)} type="button" className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                            Eliminar
+                          </button>
                         </td>
                     </tr>
                   ))
